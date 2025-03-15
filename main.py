@@ -5,8 +5,8 @@ import requests
 
 app = FastAPI()
 
-TEAM_ID = "TVOJ_TEAM_ID"
-DATABASE_ID = "TVOJ_DATABASE_ID"
+TEAM_ID = "DMgaGJbRZKFZcrGvb"
+DATABASE_ID = "dpk1s9iqd6n6"
 API_TOKEN = "TVOJ_API_TOKEN"
 
 @app.get("/get_tables")
