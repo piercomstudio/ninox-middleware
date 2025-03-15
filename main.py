@@ -3,10 +3,10 @@ from fastapi.responses import JSONResponse
 import json
 import requests
 
-app = FastAPI()  # ✅ Toto musí byť na začiatku!
+app = FastAPI()
 
-TEAM_ID = "TVOJE_TEAM_ID"
-DATABASE_ID = "TVOJE_DATABASE_ID"
+TEAM_ID = "TVOJ_TEAM_ID"
+DATABASE_ID = "TVOJ_DATABASE_ID"
 API_TOKEN = "TVOJ_API_TOKEN"
 
 @app.get("/get_tables")
@@ -16,7 +16,7 @@ def get_tables():
     response = requests.get(url, headers=headers)
     data = response.json()
     
-    return JSONResponse(content=json.loads(json.dumps(data, ensure_ascii=False)), media_type="application/json; charset=utf-8")
+    return JSONResponse(content=data)
 
 @app.get("/get_table_data/{table_id}")
 def get_table_data(table_id: str):
@@ -25,4 +25,4 @@ def get_table_data(table_id: str):
     response = requests.get(url, headers=headers)
     data = response.json()
     
-    return JSONResponse(content=json.loads(json.dumps(data, ensure_ascii=False)), media_type="application/json; charset=utf-8")
+    return JSONResponse(content=data)
